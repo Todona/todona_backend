@@ -9,7 +9,7 @@ require("./db.js");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "https://radsadorn.netlify.app"
 };
 
 app.use(cors(corsOptions));
