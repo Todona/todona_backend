@@ -9,7 +9,7 @@ require("./db.js");
 const app = express();
 
 var corsOptions = {
-  origin: "https://radsadorn.netlify.app"
+  origin: process.env.CORS_ORIGIN
 };
 
 app.use(cors(corsOptions));
