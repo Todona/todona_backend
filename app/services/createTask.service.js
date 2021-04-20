@@ -3,7 +3,6 @@ const TaskModel = db.task;
 const TodoList = db.todoList;
 
 module.exports.createTaskService = async (req, res) => {
-    console.log(req.body)
     if (!req.body || req.body.task === "") {
         res.status(400).send({ message: "Content can not be empty!" });
         return;

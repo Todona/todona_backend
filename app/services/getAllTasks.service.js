@@ -16,14 +16,20 @@ module.exports.getAllTasksService = async (req, res) => {
             }
 
             const isFinished = req.query.isFinished;
+            const task = req.query.task ? { $regex: req.query.task, $options: "i" } : { $regex: "", $options: "i" };
             const sortVar = { time: 1 };
 
+            console.log(task);
+
             const sortTask = await TaskModel.find({
+                task,
                 _id: { $in: user.tasks },
                 isFinished
             }).sort(sortVar);
 
-            res.status(200).send(sortTask);
+            console.log(sortTask);
+
+            return res.status(200).send(sortTask);
 
         });
 }
