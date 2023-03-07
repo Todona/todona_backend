@@ -9,7 +9,8 @@ require("./db.js");
 const app = express();
 
 var corsOptions = {
-  origin: [process.env.CORS_ORIGIN, process.env.CORS_DOMAIN]
+  origin: [process.env.CORS_ORIGIN, process.env.CORS_DOMAIN],
+  credentials: true,
 };
 
 app.use(cors(corsOptions));
