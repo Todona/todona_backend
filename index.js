@@ -9,10 +9,10 @@ require("./db.js");
 const app = express();
 
 var corsOptions = {
-  origin: process.env.CORS_ORIGIN
+  origin: [process.env.CORS_ORIGIN, process.env.CORS_DOMAIN]
 };
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
